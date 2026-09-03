@@ -16,6 +16,7 @@ java {
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
 }
 
 dependencies {
@@ -29,6 +30,9 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testAnnotationProcessor 'org.projectlombok:lombok'
+    implementation platform("org.springframework.ai:spring-ai-bom:2.0.0-M4")
+    implementation 'org.springframework.ai:spring-ai-starter-model-openai'
+    developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 }
 
 tasks.named('test') {
